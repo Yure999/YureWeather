@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/stateImg"
+        android:layout_width="70dp"
+        android:layout_height="79dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:mipmap/sym_def_app_icon" />
+
+    <TextView
+        android:id="@+id/stateTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/textview"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/stateImg"
+        app:layout_constraintStart_toEndOf="@+id/stateImg"
+        app:layout_constraintTop_toTopOf="@+id/stateImg" />
+
+    <TextView
+        android:id="@+id/dateTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textview"
+        app:layout_constraintBottom_toTopOf="@+id/stateTxt"
+        app:layout_constraintEnd_toEndOf="@+id/stateTxt"
+        app:layout_constraintStart_toStartOf="@+id/stateTxt"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.761" />
+
+    <TextView
+        android:id="@+id/tempTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/textview"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/maxTempTitleTxt"
+        app:layout_constraintStart_toStartOf="@+id/guideline" />
+
+    <TextView
+        android:id="@+id/maxTempTitleTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/max"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/minTempTitleTxt"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        tools:text="max:" />
+
+    <TextView
+        android:id="@+id/minTempTitleTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/min"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/stateImg"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        tools:text="min:" />
+
+    <TextView
+        android:id="@+id/maxTempTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:text="@string/textview"
+        app:layout_constraintBaseline_toBaselineOf="@+id/maxTempTitleTxt"
+        app:layout_constraintStart_toEndOf="@+id/maxTempTitleTxt" />
+
+    <TextView
+        android:id="@+id/minTempTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:text="@string/textview"
+        app:layout_constraintBaseline_toBaselineOf="@+id/minTempTitleTxt"
+        app:layout_constraintStart_toEndOf="@+id/minTempTitleTxt" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="232dp" />
+
+    <TextView
+        android:id="@+id/tempTitleTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/temperature"
+        app:layout_constraintBottom_toTopOf="@+id/tempTxt"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
