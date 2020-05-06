@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">NetworkProJect</string>
+    <string name="app_name">YureWeather</string>
     <string name="textview">TextView</string>
     <string name="max">max</string>
     <string name="min">min</string>

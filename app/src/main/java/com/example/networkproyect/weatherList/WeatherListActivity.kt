@@ -2,6 +2,8 @@ package com.example.networkproyect.weatherList
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.networkproyect.R
@@ -27,10 +29,29 @@ class WeatherListActivity : AppCompatActivity(), WeatherListPresenter.View {
                 (weatherList.layoutManager as LinearLayoutManager).orientation
             )
         )
+        swipeRefresh.isRefreshing = true
+        swipeRefresh.setOnRefreshListener {
+            presenter.onRefresh()
+        }
         presenter.init()
     }
 
-    override fun showWeatherList(weatherList: List<Weather>) {
-        adapter.addItems(weatherList)
+    override fun showWeatherList(weatherData: List<Weather>) {
+        adapter.addItems(weatherData)
+        weatherList.visibility = View.VISIBLE
+        swipeRefresh.isRefreshing = false
+        loadingBar.visibility = View.GONE
+        swipeRefresh.visibility = View.VISIBLE
+    }
+
+    override fun hideWeatherList() {
+        weatherList.visibility = View.GONE
+    }
+
+    override fun showError(message: String){
+        Toast.makeText(this,message,Toast.LENGTH_SHORT).show()
+        loadingBar.visibility = View.GONE
+        swipeRefresh.visibility = View.VISIBLE
+        swipeRefresh.isRefreshing = false
     }
 }

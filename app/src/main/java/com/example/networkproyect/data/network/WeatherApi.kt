@@ -9,7 +9,7 @@ import retrofit2.http.Path
 
 interface WeatherApi {
     @GET("location/{id}")
-    suspend fun getWeatherByLocation(@Path("id") id: String): WeatherResponse
+    suspend fun getWeatherByLocation(@Path("id") id: String): WeatherResponse?
 }
 
 data class WeatherResponse(
